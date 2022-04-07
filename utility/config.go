@@ -1,14 +1,15 @@
 package utility
 
 import (
-	"Days/config"
+	"Days/global"
 	"fmt"
 )
 
-func AdminConfigInit() {
-	config.AdminConfig.AddConfigPath("./config")
-	config.AdminConfig.SetConfigFile("admin_config.yaml")
-	err := config.AdminConfig.ReadInConfig()
+func ConfigInit() {
+	global.Config.AddConfigPath("./config")
+	global.Config.SetConfigName("config")
+	global.Config.SetConfigType("yaml")
+	err := global.Config.ReadInConfig()
 	if err != nil {
 		fmt.Println(err)
 	}
