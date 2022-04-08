@@ -27,7 +27,7 @@ func Login(context *gin.Context) {
 	}
 	fmt.Println(PostData)
 	if PostData.UserName == username && PostData.PassWord == password {
-		session, err := middleware.Store.Get(context.Request, "username")
+		session, err := middleware.Store.Get(context.Request, "user")
 		if err != nil {
 			context.JSON(http.StatusOK, gin.H{"error": "wrong"})
 			return
