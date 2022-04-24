@@ -21,7 +21,7 @@ func Login(context *gin.Context) {
 	var PostData LoginInfo
 	err := context.ShouldBindJSON(&PostData)
 	if err != nil {
-		fmt.Println("请求错误")
+		fmt.Println("请求错误", err)
 		context.JSON(http.StatusBadRequest, gin.H{"error": "wrong request"})
 		return
 	}

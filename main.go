@@ -5,5 +5,8 @@ import "Days/utility"
 func main() {
 	utility.ConfigInit()
 	router := initRouter()
-	router.Run(":8080")
+	err := router.Run(":8080")
+	if err != nil {
+		return
+	}
 }
